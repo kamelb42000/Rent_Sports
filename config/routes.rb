@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'equipments/index'
+  get 'equipments/show'
+  get 'equipments/new'
+  get 'equipments/create'
+  get 'equipments/destroy'
   devise_for :users
   root to: "pages#home"
   # get 'bookings/index'
