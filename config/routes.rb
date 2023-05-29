@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
-  get 'equipments/index'
-  get 'equipments/show'
-  get 'equipments/new'
-  get 'equipments/create'
-  get 'equipments/destroy'
-  devise_for :users
   root to: "pages#home"
-  # get 'bookings/index'
-  # get 'bookings/show'
-  # get 'bookings/new'
-  # get 'bookings/create'
-  # get 'bookings/delete'
-  resources :bookings
+  devise_for :users
+
+  resources :equipments do
+    resources :bookings, only: [:create]
+  end
+
+  resources :bookings, only: [:destroy, :edit, :update]
+
+  # resources :categories do
+  #   resources :equipments
+
+  # end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
