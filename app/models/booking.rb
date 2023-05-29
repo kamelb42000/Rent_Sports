@@ -1,8 +1,4 @@
 class Booking < ApplicationRecord
-  belongs_to :equipements, :users
-
-# Savoir ce qu'on affiche sur la page
-  # validates :
-
-
-  end
+  belongs_to :user
+  belongs_to :equipment
+end
