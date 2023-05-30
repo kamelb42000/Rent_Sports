@@ -1,4 +1,8 @@
 <h1><%=  @stuff.name%></h1>
+<p><%=  @stuff.year%></p>
+<p><%=  @stuff.price%></p>
+<p><%=  @stuff.description%></p>
+<p>Catégorie: <%= @category_name %></p>
 
 <%# <p><%= @stuff.year, @stuff.price, @stuff.description %></p> %>
 <div>
@@ -12,3 +16,5 @@
 <div>
   <%= link_to "Edit", edit_stuff_path(@stuff)%>
 </div>
+
+<p><%= link_to "Back", stuffs_path %></p>

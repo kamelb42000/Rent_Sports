@@ -5,6 +5,7 @@ class StuffsController < ApplicationController
 
   def show
     @stuff = Stuff.find(params[:id])
+    @category_name = Category.find(@stuff.category_id).name.to_s
   end
 
   def edit
@@ -28,7 +29,7 @@ class StuffsController < ApplicationController
     @stuff = Stuff.new(stuff_params)
     @stuff.user_id = current_user.id
     if @stuff.save
-      redirect_to stuffs_path(@stuffs)
+      redirect_to stuff_path(@stuff)
     else
       render :new, status: :unprocessable_entity
     end
@@ -44,7 +45,7 @@ class StuffsController < ApplicationController
   private
 
   def stuff_params
-    params.require(:stuff).permit(:name, :user_id, :category_id)
+    params.require(:stuff).permit(:name, :category_id)
   end
 
 
