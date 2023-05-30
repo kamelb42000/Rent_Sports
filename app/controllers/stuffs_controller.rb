@@ -11,6 +11,15 @@ class StuffsController < ApplicationController
     @stuff = Stuff.find(params[:id])
   end
 
+  def update
+    @stuff = Stuff.find(params[:id])
+    if @stuff.update(stuff_params)
+    redirect_to stuffs_path(@stuffs), notice: "L'article a été modifié avec succès"
+    else
+      render :edit
+    end
+  end
+
   def new
     @stuff = Stuff.new
   end
@@ -28,14 +37,9 @@ class StuffsController < ApplicationController
   def destroy
     @stuff = Stuff.find(params[:id])
     @stuff.destroy
-    redirect_to stuffs_path(@stuffs), status: :see_other
+    redirect_to stuffs_path, status: :see_other
   end
 
-  def update
-    @stuff = Stuff.find(params[id])
-    @stuff.update(stuff_params)
-    redirect_to stuffs_path(@stuffs)
-  end
 
   private
 
