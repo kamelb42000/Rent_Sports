@@ -1,63 +1,34 @@
-.book {
-  position: relative;
-  border-radius: 10px;
-  width: 220px;
+// code HTML pour 2 cartes
+// <div class="rowII">
+// <div class="col-4">
+// <%= image_tag 'balle.jpg' %>
+//     <h3>Ball de Base-ball</h3>
+//     <div class="icone">
+//         <i class="fa-solid fa-star"></i>
+//         <i class="fa-solid fa-star"></i>
+//         <i class="fa-solid fa-star"></i>
+//         <i class="fa-solid fa-star"></i>
+//         <i class="fa-solid fa-star"></i>
+//         <i class="fa-solid fa-star"></i>
+//     </div>
+//     <p>Prix: 5000€ la journée</p>
+// </div>
+.col-4{
+  flex-basis: 25%;
+  min-width: 200px;
+  padding: 15px;
+  transition: transform 0.5s;
+}
+.col-4 img{
+  width: 300px;
   height: 300px;
-  background-color: whitesmoke;
-  -webkit-box-shadow: 1px 1px 12px #000;
-  box-shadow: 1px 1px 12px #000;
-  -webkit-transform: preserve-3d;
-  -ms-transform: preserve-3d;
-  transform: preserve-3d;
-  -webkit-perspective: 2000px;
-  perspective: 2000px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: #000;
 }
-
-.cover {
-  top: 0;
-  position: absolute;
-  background-color: lightgray;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  cursor: pointer;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform-origin: 0;
-  -ms-transform-origin: 0;
-  transform-origin: 0;
-  -webkit-box-shadow: 1px 1px 12px #000;
-  box-shadow: 1px 1px 12px #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+.col-4:hover{
+  transform: translateY(-10px);
 }
-
-.book:hover .cover {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform: rotatey(-80deg);
-  -ms-transform: rotatey(-80deg);
-  transform: rotatey(-80deg);
+.icone{
+  color: #16a7b4;
 }
-
-p {
-  font-size: 20px;
-  font-weight: bolder;
+.col-4 h2{
+  margin-left: 10px;
 }
