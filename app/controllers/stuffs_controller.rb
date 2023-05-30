@@ -1,4 +1,4 @@
-class EquipmentsController < ApplicationController
+class StuffsController < ApplicationController
   def index
     @equipments = Equipment.all
   end
@@ -16,9 +16,10 @@ class EquipmentsController < ApplicationController
   end
 
   def create
-    @equipment = Equipment.new(equipement_params)
+    @equipment = Equipment.new(equipment_params)
+    @equipment.users_id = current_user.id
     if @equipment.save
-      redirect_to equipment_path(@equipments)
+      redirect_to equipments_path(@equipments)
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,14 +33,14 @@ class EquipmentsController < ApplicationController
 
   def update
     @equipment = Equipment.find(params[id])
-    @equipment.update(restaurant_params)
+    @equipment.update(equipment_params)
     redirect_to equipments_path(@equipments)
   end
 
   private
 
   def equipment_params
-    params.require(:equipment).permit(:name, :year, :price)
+    params.require(:equipment).permit(:name, :users_id, :categories_id)
   end
 
 
