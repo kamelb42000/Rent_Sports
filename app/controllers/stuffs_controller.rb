@@ -1,46 +1,46 @@
 class StuffsController < ApplicationController
   def index
-    @equipments = Equipment.all
+    @stuffs = Stuff.all
   end
 
   def show
-    @equipment = Equipment.find(params[id])
+    @stuff = Stuff.find(params[:id])
   end
 
   def edit
-    @equipment = Equipment.find(params[id])
+    @stuff = Stuff.find(params[:id])
   end
 
   def new
-    @equipment = Equipment.new
+    @stuff = Stuff.new
   end
 
   def create
-    @equipment = Equipment.new(equipment_params)
-    @equipment.users_id = current_user.id
-    if @equipment.save
-      redirect_to equipments_path(@equipments)
+    @stuff = Stuff.new(stuff_params)
+    @stuff.user_id = current_user.id
+    if @stuff.save
+      redirect_to stuffs_path(@stuffs)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @equipment = Equipment.find(params[:id])
-    @equipment.destroy
-    redirect_to equipments_path(@equipments), status: :see_other
+    @stuff = Stuff.find(params[:id])
+    @stuff.destroy
+    redirect_to stuffs_path(@stuffs), status: :see_other
   end
 
   def update
-    @equipment = Equipment.find(params[id])
-    @equipment.update(equipment_params)
-    redirect_to equipments_path(@equipments)
+    @stuff = Stuff.find(params[id])
+    @stuff.update(stuff_params)
+    redirect_to stuffs_path(@stuffs)
   end
 
   private
 
-  def equipment_params
-    params.require(:equipment).permit(:name, :users_id, :categories_id)
+  def stuff_params
+    params.require(:stuff).permit(:name, :user_id, :category_id)
   end
 
 
