@@ -1,32 +1,115 @@
 // Specific CSS for your home-page
-body {
-  background-color: #1E555C;
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(#fff,#eaf2fb);
 }
-
-.header {
-  background-color: #081619;
-  width: 100%;
-  height: 25%;
-  border-radius: 16px;
+.navbar{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  padding: 20px;
 }
-
-.header h1{
-  background-color:#081619;
-  color: white;
+.logo img{
+  width: 100px;
 }
-
-.header p{
-  color: white;
-  position: relative;
-  right: 0;
+.logo{
+  width: 125px;
 }
+nav{
+  flex: 1;
+  text-align: right;
+}
+nav ul{
+  display: inline-block;
+  list-style-type: none;
+}
+nav ul li{
+  display: inline-block;
+  margin-right: 50px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: #555;
+  font-size: 24px;
+}
+.container{
+  max-width: 1500px;
+  margin: 20px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.rowII{
+  margin-top: 10%;
+  margin-left: 30px;
+  display: flex;
 
-.container .row{
-  margin-top: 16px;
+}
+.col{
+  flex-basis: 50%;
+  min-width: 300px;
+}
+.col img{
+  width: 90%;
+  height: 80%;
+}
+.row{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr; /* Deux colonnes de largeur égale */
+  grid-gap: 100px; /* Espacement de 10 pixels entre les éléments */
+  grid-template-rows: 430px;
+  justify-content: center;
+  border-radius: 16px;
+  margin-top: 10%;
+}
+.col h1{
+  font-size: 50px;
+  line-height: 60px;
+}
+.col a{
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 30px;
+  background: #0929db;
+  color: #fff;
+  border-radius: 30px;
+  margin-top: 25px;
+  transition: background 0.3s;
+}
+.col a:hover{
+  background: #106e77;
+}
+p{
+  color: #555;
+}
+.header-section{
+  margin-top: -20px;
+}
+/* style de la section catégorie*/
+.categories{
+  margin:70px 0;
+}
+
+.container h2{
+  text-align: center;
+  font-size: 2.2rem;
+  color: #444;
+  margin: 50px 0;
+}
+/* section meilleurs produits*/
+.col-4{
+  flex-basis: 25%;
+  min-width: 200px;
+  padding: 15px;
+  transition: transform 0.5s;
+}
+.col-4 img{
+  width: 100%;
+}
+.col-4:hover{
+  transform: translateY(-10px);
+}
+.icone{
+  color: #16a7b4;
 }
