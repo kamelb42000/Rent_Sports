@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Stuff.destroy_all
+Category.destroy_all
+User.destroy_all
 
 p "Create Categories"
 category = Category.create!(name: 'Football', color: 'FFFFFF')
