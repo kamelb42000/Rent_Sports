@@ -1,4 +1,8 @@
 <h1><%=  @stuff.name%></h1>
+<p><%=  @stuff.year%></p>
+<p><%=  @stuff.price%></p>
+<p><%=  @stuff.description%></p>
+<p>Catégorie: <%= @category_name %></p>
 
 <p>Find me in app/views/equipments/show.html.erb</p>
 <div>
@@ -7,3 +11,5 @@
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
       %>
 </div>
+
+<p><%= link_to "Back", stuffs_path %></p>
