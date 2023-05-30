@@ -14,9 +14,7 @@ body{
 .logo img{
   width: 100px;
 }
-.logo{
-  width: 125px;
-}
+
 nav{
   flex: 1;
   text-align: right;
@@ -33,6 +31,12 @@ nav ul li a{
   text-decoration: none;
   color: #555;
   font-size: 24px;
+}
+svg{
+  text-decoration: none;
+  color: #555;
+  width: 30px; /* Largeur souhaitée */
+  height: 30px;
 }
 .container{
   max-width: 1500px;
@@ -52,7 +56,8 @@ nav ul li a{
 }
 .col img{
   width: 90%;
-  height: 80%;
+  height: 100%;
+  object-fit: cover;
 }
 .row{
   display: grid;
@@ -105,11 +110,40 @@ p{
   transition: transform 0.5s;
 }
 .col-4 img{
-  width: 100%;
+  width: 300px;
+  height: 300px;
 }
 .col-4:hover{
   transform: translateY(-10px);
 }
 .icone{
   color: #16a7b4;
+}
+.col-4 h2{
+  margin-left: 10px;
+}
+
+.btn{
+  display: inline-block;
+  text-decoration: none;
+  padding: 4px 30px;
+  background: #0929db;
+  color: #fff;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.btn:hover{
+  background: #106e77;
+}
+.recherche{
+  width: 600px;
+  height: 32px;
+  border-radius: 8px;
+  top: 40px
+}
+
+a strong{
+  font-size: 32px;
+  color: black;
+  left: 8px;
 }

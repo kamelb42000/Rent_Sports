@@ -1,0 +1,16 @@
+// code html
+// <a href="">Explorez Maintenant &#8594;</a>
+
+.col a{
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 30px;
+  background: #0929db;
+  color: #fff;
+  border-radius: 30px;
+  margin-top: 25px;
+  transition: background 0.3s;
+}
+.col a:hover{
+  background: #106e77;
+}
