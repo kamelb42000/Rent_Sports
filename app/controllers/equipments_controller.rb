@@ -11,6 +11,15 @@ class EquipmentsController < ApplicationController
     @equipement = Equipment.find(params[id])
   end
 
+  def update
+    @equipement = Equipment.find(params[id])
+    if @equipment.update(equipement_params)
+      redirect_to equipments_path(@equipements), notice: "l'équipement a été modifié avec succès"
+    else
+      render :edit
+    end
+  end
+
   def new
     @equipement = Equipment.new
   end
@@ -30,17 +39,11 @@ class EquipmentsController < ApplicationController
     redirect_to equipments_path(@equipments), status: :see_other
   end
 
-  def update
-    @equipement = Equipment.find(params[id])
-    @equipement.update(restaurant_params)
-    redirect_to equipments_path(@equipements)
-  end
 
   private
 
   def equipment_params
     params.require(:equipment).permit(:name, :year, :price)
   end
-
 
 end

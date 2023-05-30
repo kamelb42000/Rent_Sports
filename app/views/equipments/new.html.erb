@@ -1,2 +1,18 @@
 <h1>Equipments#new</h1>
 <p>Find me in app/views/equipments/new.html.erb</p>
+<%= form_with model: @equipment, url: equipment_path(@equipment), method: :patch, local: true do |f| %>
+ <div class=“field”>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class=“field”>
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class=“actions”>
+    <%= form.submit “Enregistrer les modifications” %>
+  </div>
+
+<% end %>
