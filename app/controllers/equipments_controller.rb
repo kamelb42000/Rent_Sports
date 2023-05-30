@@ -1,18 +1,18 @@
 class EquipmentsController < ApplicationController
   def index
-    @equipements = Equipment.all
+    @equipments = Equipment.all
   end
 
   def show
-    @equipement = Equipment.find(params[id])
+    @equipment = Equipment.find(params[id])
   end
 
   def edit
-    @equipement = Equipment.find(params[id])
+    @equipment = Equipment.find(params[id])
   end
 
   def new
-    @equipement = Equipment.new
+    @equipment = Equipment.new
   end
 
   def create
@@ -31,9 +31,9 @@ class EquipmentsController < ApplicationController
   end
 
   def update
-    @equipement = Equipment.find(params[id])
-    @equipement.update(restaurant_params)
-    redirect_to equipments_path(@equipements)
+    @equipment = Equipment.find(params[id])
+    @equipment.update(restaurant_params)
+    redirect_to equipments_path(@equipments)
   end
 
   private
