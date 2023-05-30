@@ -14,15 +14,16 @@
     <section class="header-section">
         <div class="container">
         <header class="navbar">
+              <a><strong>Rent-Sports</strong></a>
             <nav>
               <ul>
-                    <li><a href="">Accueil</a></li>
-                    <li><a href="">Produits</a></li>
-                    <li><a href="">Connexion</a> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-</svg>
-</li>
+                <li><a href="">Accueil</a></li>
+                <li><a href="">Produits</a></li>
+                <li><%= link_to "Compte", new_user_session_path %></a></li>
                 </ul>
+              <div class="barre">
+                <input class="recherche" type="text-input"placeholder="Mon équipement"><input class="btn" type="submit" value="Envoyer" >
+              </div>
             </nav>
         </header>
         <div class="row">
@@ -99,7 +100,7 @@
 
 
 
-<div class="containerII">
+<%# <div class="containerII">
     <div class="content">
       <i style="background-image: url(&quot;https://static.cdninstagram.com/rsrc.php/v3/yS/r/ajlEU-wEDyo.png&quot;); background-position: 0px -52px; background-size: auto; width: 175px; height: 51px; background-repeat: no-repeat; display: inline-block;" role="img" class="" aria-label="Instagram" data-visualcompletion="css-img"></i>
       <form class="content__form">
@@ -134,4 +135,4 @@
         <button>Forgot password?</button>
       </div>
     </div>
-  </div>
+  </div> %>

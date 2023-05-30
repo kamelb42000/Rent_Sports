@@ -1,12 +1,70 @@
-.navbar-rent {
-  justify-content: space-between;
-  background: white;
+// code HTML
+// <section class="header-section">
+// <div class="container">
+// <header class="navbar">
+//     <nav>
+//       <ul>
+//         <li><input type="text-input"placeholder="Mon équipement"><input type="submit" value="Envoyer" ></li>
+//         <li><a href="">Accueil</a></li>
+//         <li><a href="">Produits</a></li>
+//         <li><a href="">Connexion <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+// <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+// </svg></a>
+// </li>
+//         </ul>
+//     </nav>
+// </header>
+// <div class="row">
+//     <div class="col">
+//         <h1> Trouver votre nouveau Sport!</h1>
+//         <p>Le Succès n'est toujours pas une question de grandeur,<br> c'est une question de pratique, un travail acharné pour cela notre site vous propose la location d'équipement sportif afin de performer dans le domaine <br> Sportif</p>
+//         <a href="">Explorez Maintenant &#8594;</a>
+//     </div>
+//     <div class="col">
+//       <%= image_tag 'fond.jpg' %>
+//     </div>
+// </div>
+// </div>
+// </section>
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(#fff,#eaf2fb);
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.logo img{
+  width: 100px;
 }
 
-.navbar-rent .navbar-collapse {
-  flex-grow: 0;
+nav{
+  flex: 1;
+  text-align: right;
 }
-
-.navbar-rent .navbar-brand img {
-  width: 40px;
+nav ul{
+  display: inline-block;
+  list-style-type: none;
+}
+nav ul li{
+  display: inline-block;
+  margin-right: 50px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: #555;
+  font-size: 24px;
+}
+svg{
+  text-decoration: none;
+  color: #555;
+  width: 50px; /* Largeur souhaitée */
+  height: 50px;
+}
+input{
+  size: 50px;
 }
