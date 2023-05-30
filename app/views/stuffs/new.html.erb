@@ -2,8 +2,8 @@
 <p>Find me in app/views/equipments/new.html.erb</p>
 
 
-<%= simple_form_for(@equipment, url: equipments_path, method: :post) do |f| %>
+<%= simple_form_for(@stuff, url: stuffs_path, method: :post) do |f| %>
   <%= f.input :name %>
-   <%= f.input :categories_id %>
+   <%= f.input :category_id %>
   <%= f.submit %>
 <% end %>
