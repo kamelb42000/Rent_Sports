@@ -16,7 +16,7 @@ class EquipmentsController < ApplicationController
   end
 
   def create
-    @equipment = Equipement.new(equipement_params)
+    @equipment = Equipment.new(equipement_params)
     if @equipment.save
       redirect_to equipment_path(@equipments)
     else
