@@ -18,26 +18,33 @@
   color: black;
 }
 
-/* carte*/
-.col-4{
-  flex-basis: 25%;
-  min-width: 200px;
-  padding: 15px;
-  transition: transform 0.5s;
-  display: grid;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.col-4 img{
-  width: 300px;
+// /* carte*/
+// .col-6{
+//   flex-basis: 25%;
+//   min-width: 200px;
+//   padding: 15px;
+//   transition: transform 0.5s;
+//   display: grid;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+// }
+// .row{
+//   position: absolute;
+//   left: 0px;
+//   gap: 0px;
+//   margin-left: 10px;
+// }
+
+.col-6 img{
+  width: 200px;
   height: 300px;
 }
-.col-4:hover{
+.col-6:hover{
   transform: translateY(-10px);
 }
 .icone{
   color: #16a7b4;
 }
-.col-4 h2{
+.col-6 h2{
   margin-left: 10px;
 }
