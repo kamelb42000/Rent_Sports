@@ -14,11 +14,8 @@ class StuffsController < ApplicationController
 
   def update
     @stuff = Stuff.find(params[:id])
-    if @stuff.update(stuff_params)
-    redirect_to stuffs_path(@stuffs), notice: "L'article a été modifié avec succès"
-    else
-      render :edit
-    end
+    @stuff.update(stuff_params)
+    redirect_to stuff_path(@stuff), notice: "L'article a été modifié avec succès"
   end
 
   def new
@@ -45,8 +42,6 @@ class StuffsController < ApplicationController
   private
 
   def stuff_params
-    params.require(:stuff).permit(:name, :category_id)
+    params.require(:stuff).permit(:name, :price, :category_id)
   end
-
-
 end
