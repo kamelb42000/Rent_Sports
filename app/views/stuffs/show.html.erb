@@ -1,9 +1,19 @@
 <h1><%=  @stuff.name%></h1>
+<p>Catégorie: <%= @category_name %></p>
+<p> Année : <%=  @stuff.year%></p>
+<p><%=  @stuff.price%></p>
+<p><%=  @stuff.description%></p>
 
-<p>Find me in app/views/equipments/show.html.erb</p>
 <div>
+
 <%= link_to "Delete",
-      stuffs_path(@stuffs),
+      stuff_path(@stuff),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
+ %>
 </div>
+
+<div>
+  <%= link_to "Edit", edit_stuff_path(@stuff)%>
+</div>
+
+<p><%= link_to "Back", stuffs_path %></p>

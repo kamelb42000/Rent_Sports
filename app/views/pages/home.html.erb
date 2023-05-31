@@ -21,12 +21,15 @@
                 <li><%= link_to "Produits", stuffs_path %></li>
                 <li><%= link_to "Compte", new_user_session_path %></a></li>
                 <li><%= link_to"Deconexion", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+                <li><a href="">Produits</a></li>
+                <li><%= link_to "Compte",  new_user_session_path %></a></li>
                 </ul>
               <div class="barre">
                 <input class="recherche" type="text-input"placeholder="Mon équipement"><input class="btn" type="submit" value="Envoyer" >
               </div>
             </nav>
         </header>
+
         <div class="row">
             <div class="col">
                 <h1> Trouver votre nouveau Sport!</h1>
