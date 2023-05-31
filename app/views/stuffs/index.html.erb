@@ -16,23 +16,26 @@
     </header>
   </div>
   <h3 class="mb-0">Produits</h3>
-  <%= link_to "New stuff", new_stuff_path, class: "btn-ghost" %>
-  <div class="row">
-      <% @stuffs.each do |stuff| %>
-        <div class="col-6">
-          <%= link_to stuff_path(stuff) do %>
-            <%= image_tag '' %>
-            <div class="card-category">
-              <%= stuff.name %>
-              <div class="icone">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+  <a class="bouton" <%= link_to "louez votre équipement", new_stuff_path, class: "btn-ghost" %></a>
+  <div class="d-flex">
+    <div class="row w-50">
+        <% @stuffs.each do |stuff| %>
+          <div class="col-6 mx-auto">
+            <%= link_to stuff_path(stuff) do %>
+              <%= image_tag '' %>
+              <div class="card-category">
+                <%= stuff.name %>
+                <div class="icone">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p>Prix: <%= stuff.price %>€ la journée</p>
               </div>
-              <p>Prix: <%= stuff.price %>€ la journée</p>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
+    <div class="w-50">Carte</div>
   </div>
 </section
