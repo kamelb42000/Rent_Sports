@@ -1,4 +1,6 @@
 class StuffsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @stuffs = Stuff.all
   end
@@ -45,8 +47,6 @@ class StuffsController < ApplicationController
   private
 
   def stuff_params
-    params.require(:stuff).permit(:name, :category_id)
+    params.require(:stuff).permit(:name, :price, :category_id)
   end
-
-
 end
