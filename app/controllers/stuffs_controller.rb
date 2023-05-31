@@ -8,6 +8,7 @@ class StuffsController < ApplicationController
   def show
     @stuff = Stuff.find(params[:id])
     @category_name = Category.find(@stuff.category_id).name.to_s
+    @booking = Booking.new
   end
 
   def edit
@@ -42,7 +43,6 @@ class StuffsController < ApplicationController
     @stuff.destroy
     redirect_to stuffs_path, status: :see_other
   end
-
 
   private
 
