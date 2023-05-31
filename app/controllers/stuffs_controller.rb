@@ -15,7 +15,7 @@ class StuffsController < ApplicationController
   def update
     @stuff = Stuff.find(params[:id])
     if @stuff.update(stuff_params)
-    redirect_to stuffs_path(@stuffs), notice: "L'article a été modifié avec succès"
+    redirect_to stuffs_path(@stuffs), notice: "L'équipement a été modifié avec succès"
     else
       render :edit
     end
