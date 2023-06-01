@@ -3,7 +3,6 @@ class StuffsController < ApplicationController
 
   def index
     @stuffs = Stuff.all
-
     @markers = @stuffs.geocoded.map do |stuff|
       {
         lat: stuff.latitude,
@@ -57,7 +56,9 @@ class StuffsController < ApplicationController
   private
 
   def stuff_params
-    params.require(:stuff).permit(:name, :price, :category_id, :current_user)
+
+    params.require(:stuff).permit(:name, :price, :category_id, :adress,:current_user )
+
   end
 
 end

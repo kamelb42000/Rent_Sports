@@ -48,6 +48,7 @@
 .col-6 h2{
   margin-left: 10px;
 }
+
 // configuration pour le bookings.index
 body{
   font-family: Arial, sans-serif;
@@ -92,3 +93,71 @@ body{
   margin-top: 30px;
   }
 
+=======
+
+// /menu de de la barre de navigation
+.Sourcelogo{
+  background: radial-gradient(#fff,#eaf2fb);
+  float: right;
+  height: 25px;
+  width:40px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.corps{
+  width:90% ;
+  margin:0 auto;
+}
+.logomenu{
+  height: 5px;
+  width: 20px;
+  background-color: black;
+}
+.menu{
+  height: 100vh;
+  width: 50%;
+  padding: 50px;
+  transform: translate(-500px);
+  transition: 0.5s;
+}
+/* change les propriété du menu la couleur des intitulé */
+.menu li{
+  list-style-type: none;
+  border-bottom: 1px solid rgb(255,255,255);
+  padding: 30px 0;
+  text-align: center;
+}
+.showmenu{
+  transform: translateX(0);
+}
+/*permet d'enlever l'attribut souligné du dernier mot */
+.menu li:last-child{
+  border-bottom: none;
+}
+/*permet de rajouter un mot en gras sur le mot Musique uniquement */
+
+
+/* met en valeur le menu en gars taille police*/
+.menu li a{
+  color: black;
+  text-decoration:none ;
+  font-size: 20px;
+  transition: font-weight 0.2s;
+}
+.menu li a:hover{
+  font-weight: bold;
+}
+@media screen and (min-width:1000px){
+  .menu{
+      width: 500px;
+  }
+}
+@media screen and (max-width:600px){
+  .menu li a{
+      font-size: 16px;
+  }
+}
