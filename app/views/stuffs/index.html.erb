@@ -20,7 +20,7 @@
 
   </div>
   <h3 class="mb-0">Produits</h3>
-  <a> class="bouton" <%= link_to "louez votre équipement", new_stuff_path, class: "btn-ghost" %></a>
+  <%= link_to "louez votre équipement", new_stuff_path, class: "btn-ghost bouton" %>
   <div class="d-flex">
     <div class="row w-50">
         <% @stuffs.each do |stuff| %>
@@ -42,6 +42,7 @@
         <% end %>
     </div>
     <div class="w-50">
+    <div class="map">
   <div style="width: 100%; height: 600px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
@@ -64,6 +65,7 @@
       <div #map style="width: 65%; position: absolute; left: 500px;" [ngStyle]="{'height': getViewPortHeight()}"></div>
   </div>
 </div>
+    </div>
 
 
 </div>
