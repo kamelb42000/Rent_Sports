@@ -1,28 +1,37 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
-    # group by
+  @bookings = current_user.bookings
   end
 
   def show
     @booking = Booking.find(params[:id])
   end
 
+  def new
+    @booking = Booking.new
+  end
+
   def create
     @stuff = Stuff.find(params[:stuff_id])
+
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
     @booking.stuff_id = @stuff.id
     @booking.accepted = true
+
+    if !@stuff.bookings.where(date: @booking.date).empty?
+      return redirect_to stuff_path(@stuff), flash: {alert: "Cet équipement est déjà réservé à cette date."}
+    end
+
     if @booking.save
-      redirect_to bookings_path, notice: 'Stuff reserved successfully.'
+      return redirect_to bookings_path
     else
-      render :new, status: :unprocessable_entity
+      redirect_to stuff_path(@stuff), flash: {alert: @booking.errors}
     end
   end
 
-   def edit
+  def edit
     @booking = Booking.find(params[:id])
   end
 

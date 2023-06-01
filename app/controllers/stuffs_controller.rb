@@ -40,7 +40,7 @@ class StuffsController < ApplicationController
     @stuff = Stuff.new(stuff_params)
     @stuff.user_id = current_user.id
     if @stuff.save
-      redirect_to stuff_path(@stuff)
+      return redirect_to stuffs_path
     else
       render :new, status: :unprocessable_entity
     end

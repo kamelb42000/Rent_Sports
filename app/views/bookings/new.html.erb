@@ -1,6 +1,6 @@
 <h1>New booking</h1>
 
-<%= simple_form_for @booking, url: bookings_path, method: :post do |f| %>
+<%= simple_form_for @booking, url: stuff_bookings_path(@stuff.id), method: :post do |f| %>
   <% if @booking.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@booking.errors.count, "error") %> </h2>
@@ -12,8 +12,8 @@
     </div>
   <% end %>
 
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+  <%= f.input :date %>
+
 
   <div class="actions">
     <%= f.button :submit, 'Reserve' %>
