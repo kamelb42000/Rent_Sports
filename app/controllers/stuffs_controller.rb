@@ -2,8 +2,9 @@ class StuffsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @stuffs = Stuff.geocoded
-    @markers = @stuffs.map do |stuff|
+    @stuffs = Stuff.all
+
+    @markers = @stuffs.geocoded.map do |stuff|
       {
         lat: stuff.latitude,
         lng: stuff.longitude,
@@ -11,6 +12,7 @@ class StuffsController < ApplicationController
         marker_html: render_to_string(partial: "marker", locals: {stuff: stuff})
       }
     end
+
   end
 
   def show
@@ -26,7 +28,7 @@ class StuffsController < ApplicationController
   def update
     @stuff = Stuff.find(params[:id])
     if @stuff.update(stuff_params)
-    redirect_to stuffs_path(@stuffs), notice: "L'équipement a été modifié avec succès"
+    redirect_to stuffs_path(@stuffs), flash: {alert: "L'équipement a été modifié avec succès"}
     else
       render :edit
     end
@@ -55,7 +57,7 @@ class StuffsController < ApplicationController
   private
 
   def stuff_params
-    params.require(:stuff).permit(:name, :price, :category_id)
+    params.require(:stuff).permit(:name, :price, :category_id, :current_user)
   end
 
 end
