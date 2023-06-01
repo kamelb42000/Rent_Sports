@@ -1,14 +1,16 @@
 <h1>Vos réservations</h1>
+
 <% @bookings.each do |booking| %>
   <p>Pour <%= booking.user.first_name  %> <%= booking.user.last_name  %>:</p>
   <p><%= booking.stuff.name %> <%= booking.date %></p>
     <p>Statut : <%= booking.accepted ? 'Réservé' : 'Non réservé' %></p>
+<%#
+    ------ Delete/Back-------- %>
   <div>
     <%= link_to "Delete", booking_path(booking.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
   </div>
 <% end %>
 <%= console %>
-
 <div>
  <p><%= link_to "Back",  stuffs_path %></p>
 </div>

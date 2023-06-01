@@ -2,7 +2,15 @@ class StuffsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @stuffs = Stuff.all
+    @stuffs = Stuff.geocoded
+    @markers = @stuffs.map do |stuff|
+      {
+        lat: stuff.latitude,
+        lng: stuff.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {stuff: stuff}),
+        marker_html: render_to_string(partial: "marker", locals: {stuff: stuff})
+      }
+    end
   end
 
   def show
@@ -32,7 +40,7 @@ class StuffsController < ApplicationController
     @stuff = Stuff.new(stuff_params)
     @stuff.user_id = current_user.id
     if @stuff.save
-      redirect_to stuff_path(@stuff)
+      return redirect_to stuffs_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -49,4 +57,5 @@ class StuffsController < ApplicationController
   def stuff_params
     params.require(:stuff).permit(:name, :price, :category_id)
   end
+
 end
