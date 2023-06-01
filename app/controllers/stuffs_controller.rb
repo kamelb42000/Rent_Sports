@@ -2,8 +2,8 @@ class StuffsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @stuffs = Stuff.geocoded
-    @markers = @stuffs.map do |stuff|
+    @stuffs = Stuff.all
+    @markers = @stuffs.geocoded.map do |stuff|
       {
         lat: stuff.latitude,
         lng: stuff.longitude,
@@ -55,7 +55,7 @@ class StuffsController < ApplicationController
   private
 
   def stuff_params
-    params.require(:stuff).permit(:name, :price, :category_id)
+    params.require(:stuff).permit(:name, :price, :category_id, :adress)
   end
 
 end
