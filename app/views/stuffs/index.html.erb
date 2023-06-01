@@ -1,23 +1,43 @@
-<div class="container py-5">
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <h3 class="mb-0">stuffs</h3>
-  <%= link_to "New stuff", new_stuff_path, class: "btn-ghost" %>
+<section class="header-section">
+  <div class="container">
+    <header class="navbar">
+      <a><strong>Rent-Sports</strong></a>
+        <nav>
+          <ul>
+            <li><%= link_to "Accueil", root_path%></li>
+            <li><%= link_to "Produits", stuffs_path %></li>
+            <li><%= link_to"Deconexion", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+            <li><%= link_to "Compte",  new_user_session_path %></a></li>
+          </ul>
+          <div class="barre">
+            <input class="recherche" type="text-input"placeholder="Mon équipement"><input class="btn" type="submit" value="Envoyer" >
+          </div>
+        </nav>
+    </header>
   </div>
-  <div class="row">
-    <% @stuffs.each do |stuff| %>
-      <div class="co-12 col-sm-6 col-md-4 mb-3">
-
-        <%= link_to stuff_path(stuff), class:"text-decoration-none" do %>
-          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)">
-            <%= stuff.name %>
+  <h3 class="mb-0">Produits</h3>
+  <a class="bouton" <%= link_to "louez votre équipement", new_stuff_path, class: "btn-ghost" %></a>
+  <div class="d-flex">
+    <div class="row w-50">
+        <% @stuffs.each do |stuff| %>
+          <div class="col-6 mx-auto">
+            <%= link_to stuff_path(stuff) do %>
+              <%= image_tag '' %>
+              <div class="card-category">
+                <%= stuff.name %>
+                <div class="icone">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p>Prix: <%= stuff.price %>€ la journée</p>
+              </div>
+            <% end %>
           </div>
         <% end %>
-      </div>
-    <% end %>
+    </div>
+    <div class="w-50">Carte</div>
   </div>
-  <div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-</div>
+</section
+

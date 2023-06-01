@@ -1,2 +1,50 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.bouton {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 30px;
+  background: #0929db;
+  color: #fff;
+  border-radius: 30px;
+  margin-top: 25px;
+  transition: background 0.3s;
+  right: 0px;
+}
+
+.bouton:hover {
+  background: #106e77;
+  color: black;
+}
+
+// /* carte*/
+// .col-6{
+//   flex-basis: 25%;
+//   min-width: 200px;
+//   padding: 15px;
+//   transition: transform 0.5s;
+//   display: grid;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+// }
+// .row{
+//   position: absolute;
+//   left: 0px;
+//   gap: 0px;
+//   margin-left: 10px;
+// }
+
+.col-6 img{
+  width: 200px;
+  height: 300px;
+}
+.col-6:hover{
+  transform: translateY(-10px);
+}
+.icone{
+  color: #16a7b4;
+}
+.col-6 h2{
+  margin-left: 10px;
+}

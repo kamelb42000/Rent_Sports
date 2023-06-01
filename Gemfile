@@ -77,4 +77,7 @@ group :test do
 end
 
 gem "devise"
-gem "geocoder"
+  #cloudinary
+gem "dotenv-rails", groups: [:development, :test]
+gem "cloudinary"
+
