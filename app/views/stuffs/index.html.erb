@@ -1,19 +1,23 @@
-<section class="header-section">
-  <div class="container">
-    <header class="navbar">
-      <a><strong>Rent-Sports</strong></a>
-        <nav>
-          <ul>
-            <li><%= link_to "Accueil", root_path%></li>
-            <li><%= link_to "Produits", stuffs_path %></li>
-            <li><%= link_to"Deconexion", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-            <li><%= link_to "Compte",  new_user_session_path %></a></li>
-          </ul>
-          <div class="barre">
-            <input class="recherche" type="text-input"placeholder="Mon équipement"><input class="btn" type="submit" value="Envoyer" >
+<body>
+      <header class="navbar" data-controller="navbar">
+        <div class="corps">
+          <div class="Sourcelogo" data-action="click->navbar#toggleMenu">
+            <div class="logomenu"></div>
+            <div class="logomenu"></div>
+            <div class="logomenu"></div>
           </div>
-        </nav>
-    </header>
+        </div>
+        <ul class="menu" data-target="navbar.menu">
+          <li><%= link_to "Produits", stuffs_path %></li>
+          <li><%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+          <li><%= link_to "Compte", new_booking_path %></a></li>
+        </ul>
+      </header>
+    <div class="titre">
+      <a><strong><%= link_to "Rent-Sports", root_path %></strong></a>
+      </div>
+
+
   </div>
   <h3 class="mb-0">Produits</h3>
   <a> class="bouton" <%= link_to "louez votre équipement", new_stuff_path, class: "btn-ghost" %></a>
@@ -47,6 +51,7 @@
     </div>
 
   </div>
+
   </div>
 
   <div style="height: 100%;">

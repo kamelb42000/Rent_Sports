@@ -1,70 +1,95 @@
 // code HTML
-// <section class="header-section">
-// <div class="container">
-// <header class="navbar">
-//     <nav>
-//       <ul>
-//         <li><input type="text-input"placeholder="Mon équipement"><input type="submit" value="Envoyer" ></li>
-//         <li><a href="">Accueil</a></li>
-//         <li><a href="">Produits</a></li>
-//         <li><a href="">Connexion <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-// <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-// </svg></a>
-// </li>
-//         </ul>
-//     </nav>
-// </header>
-// <div class="row">
-//     <div class="col">
-//         <h1> Trouver votre nouveau Sport!</h1>
-//         <p>Le Succès n'est toujours pas une question de grandeur,<br> c'est une question de pratique, un travail acharné pour cela notre site vous propose la location d'équipement sportif afin de performer dans le domaine <br> Sportif</p>
-//         <a href="">Explorez Maintenant &#8594;</a>
-//     </div>
-//     <div class="col">
-//       <%= image_tag 'fond.jpg' %>
-//     </div>
-// </div>
-// </div>
-// </section>
-body{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(#fff,#eaf2fb);
-}
-.navbar{
-  display: flex;
-  align-items: center;
-  padding: 20px;
-}
-.logo img{
-  width: 100px;
+
+.corps {
+  width: 90%;
+  margin: 0 auto;
 }
 
-nav{
-  flex: 1;
-  text-align: right;
+.titre a{
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-size: 64px;
+  position: relative;
+  top: 10%;
+  left: 40%;
+  transition: 0.3s;
 }
-nav ul{
-  display: inline-block;
+
+.titre a:hover{
+  color:#16a7b4 ;
+}
+
+.Sourcelogo {
+  background-color: radial-gradient(#fff,#eaf2fb);
+  float: right;
+  height: 25px;
+  width: 40px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logomenu {
+  height: 3px;
+  width: 30px;
+  background-color: snow;
+}
+
+.menu {
+  position: absolute;
+  top: 0vh;
+  left: -15%;
+  height: 100vh;
+  width: 60%;
+  padding: 50px;
+  transform: translate(-600px);
+  transition: 0.5s;
+}
+
+.menu li {
   list-style-type: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  padding: 30px 0;
+  text-align: center;
+
 }
-nav ul li{
-  display: inline-block;
-  margin-right: 50px;
+
+.showmenu {
+  left: 0%;
+  top:0%
 }
-nav ul li a{
+
+.menu li:last-child {
+  border-bottom: none;
+}
+
+.menu > li > a {
+  color: black;
   text-decoration: none;
-  color: #555;
-  font-size: 24px;
+  font-size: 20px;
+  transition: font-weight 0.2s;
 }
-svg{
-  text-decoration: none;
-  color: #555;
-  width: 50px; /* Largeur souhaitée */
-  height: 50px;
+
+.menu li a:hover {
+  font-weight: bold;
 }
-input{
-  size: 50px;
+
+
+@media screen and (max-width: 600px) {
+  .menu li a {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .menu {
+    width: 300px;
+}
+}
+ul.menu.showmenu{
+  background: radial-gradient(#75DDDD,#C3C3C3);
 }
