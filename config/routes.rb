@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :stuffs do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:create, :new]
   end
 
-  resources :bookings
+  resources :bookings, only: [:edit, :index, :destroy, :update]
 
-  resources :categories do
-    resources :stuffs
+  resources :bookings do
+    member do
+      put :accept
+    end
   end
 end

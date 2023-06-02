@@ -23,11 +23,15 @@ svg{
   margin-top: 10%;
   margin-left: 30px;
   display: flex;
-
 }
 .col{
   flex-basis: 50%;
   min-width: 300px;
+}
+.future-produits h2{
+  position: relative;
+  left: 10%;
+  z-index:-1;
 }
 .col img{
   width: 90%;
