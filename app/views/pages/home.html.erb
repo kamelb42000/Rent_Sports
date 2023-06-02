@@ -9,6 +9,7 @@
         </div>
         <ul class="menu" data-navbar-target="menu">
           <li><%= link_to "Produits", stuffs_path %></li>
+
           <li>
               <% if user_signed_in? %>
                 <%= link_to "Déconnexion", destroy_user_session_path, {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
