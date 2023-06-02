@@ -4,24 +4,19 @@
   </div>
   <br>
   <div class="input_container">
-
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-  </div>
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :email,
+        required: true,
+        autofocus: true,
+        input_html: { autocomplete: "email" } %>
+      </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Envoyez-moi un nouveau mot de passe" %>
   </div>
-<% end %>
+    <% end %>
 
 <%= render "devise/shared/links" %>
-
-  <%# <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  <%# </div>  %>
+</div>

@@ -3,33 +3,33 @@
 <div class="card">
   <div class="card-header">
     <div class="text-header">Réservations</div>
-  </div>
-  <div class="card-body">
-<%= simple_form_for @booking, url: stuff_bookings_path(@stuff.id), method: :post do |f| %>
-  <% if @booking.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@booking.errors.count, "error") %> </h2>
-      <ul>
-        <% @booking.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-      </ul>
     </div>
-  <% end %>
-  <%= f.input :date, as: :date %>
-<h1><%=  @stuff.name%></h1>
-<p>Catégorie: <%= @category_name %></p>
-<p> Année : <%=  @stuff.year%></p>
-<p>Prix: <%=  @stuff.price%></p>
-<p>Description: <%=  @stuff.description%></p>
-<p>Adresse: <%=  @stuff.address%></p>
-  <div class="actions">
-     <input type="submit" class="btn-new" value="Réservé">
-    </div>
-<% end %>
+    <div class="card-body">
+    <%= simple_form_for @booking, url: stuff_bookings_path(@stuff.id), method: :post do |f| %>
+    <% if @booking.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@booking.errors.count, "error") %> </h2>
+          <ul>
+          <% @booking.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+          </ul>
       </div>
+     <% end %>
+    <%= f.input :date, as: :date %>
+    <h1><%=  @stuff.name%></h1>
+    <p>Catégorie: <%= @category_name %></p>
+    <p> Année : <%=  @stuff.year%></p>
+    <p>Prix: <%=  @stuff.price%></p>
+    <p>Description: <%=  @stuff.description%></p>
+    <p>Adresse: <%=  @stuff.address%></p>
+     <div class="actions">
+      <input type="submit" class="btn-new" value="Réservé">
+    </div>
+    <% end %>
   </div>
 </div>
+
 <%# ------- Réservations ----- %>
 
 
@@ -50,9 +50,9 @@
 <% end %>
 <%# ------ Alerte message -------- %>
 <div class="btn-show1">
-<%= link_to "Delete",
-      stuff_path(@stuff),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  <%= link_to "Delete",
+    stuff_path(@stuff),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 </div>
 
 <div class="btn-show2">
@@ -60,7 +60,7 @@
 </div>
 
 <div class="btn-show3">
-<%= link_to "Back", stuffs_path %>
+  <%= link_to "Back", stuffs_path %>
 </div>
 
 <% @stuff.photos.each do |photo| %>
