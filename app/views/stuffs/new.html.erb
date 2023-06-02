@@ -1,27 +1,20 @@
-
-
 <div class="card">
   <div class="card-header">
     <div class="text-header">Mettez en location votre équipement</div>
-  </div>
+    </div>
   <div class="card-body">
-
-<%= simple_form_for(@stuff, url: stuffs_path, method: :post) do |f| %>
-  <%= f.input :name %>
-   <%= f.input :category_id, collection: Category.all %>
+    <%= simple_form_for(@stuff, url: stuffs_path, method: :post) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category_id, collection: Category.all %>
     <%= f.input :price %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-
     <div>
-    <%= f.label :description %>
-    <div class="textarea">
-    <%= f.text_area :description %>
+      <%= f.label :description %>
+        <div class="textarea">
+          <%= f.text_area :description %>
+        </div>
     </div>
-    </div>
-     <input type="submit" class="btn-new" value="Louez votre équipement">
-<% end %>
-      </div>
+    <input type="submit" class="btn-new" value="Louez votre équipement">
+    <% end %>
   </div>
 </div>
-
-</body>

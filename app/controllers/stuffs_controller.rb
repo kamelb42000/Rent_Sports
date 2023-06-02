@@ -60,6 +60,7 @@ class StuffsController < ApplicationController
     params.require(:stuff).permit(:name, :price, :category_id, :adress,:current_user, photos: [], :description)
 
 
+
   end
 
 end
