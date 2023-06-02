@@ -1,5 +1,22 @@
 <div>
-  <h1>Vos réservations</h1>
+<div>
+  <h2>My booked stuffs</h2>
+  <% @my_stuff_booked.each do |booking| %>
+    <p>Equipements : <%= booking.stuff.name %></p>
+    <p>DATE : <%= booking.date %></p>
+    <p>Nom : <%= booking.user.first_name %></p>
+    <p>Prix : <%= booking.stuff.price %></p>
+
+    <% if booking.accepted %>
+      <p>Statut : Validée</p>
+    <% else %>
+      <p>Statut : Non Validée</p>
+    <%= link_to "Valider la réservation", accept_booking_path(booking), data: {turbo_method: :put} %>
+    <% end %>
+  <% end %>
+</div>
+
+  <h2>Vos réservations</h2>
 
   <% @my_bookings.each do |booking| %>
     <p>Pour <%= booking.user.first_name  %> <%= booking.user.last_name  %>:</p>
@@ -7,6 +24,7 @@
       <p>Statut : <%= booking.accepted ? 'Réservé' : 'Non réservé' %></p>
 
     <div>
+      <%= link_to "Edit",  edit_booking_path(booking) %>
       <%= link_to "Delete", booking_path(booking.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     </div>
   <% end %>
@@ -17,11 +35,10 @@
 </div>
 
 <div>
-  <h2>My booked stuffs</h2>
-  <% @my_stuff_booked.each do |booking| %>
-   <p> Equipements<%= booking.stuff.name %></p>
-   <p> DATE :<%= booking.date %></p>
-   <p> Nom <%= booking.user.first_name %></p>
-   <p> Prix<%= booking.stuff.price %></p>
-  <% end %>
+  <h2>Mes équipements</h2>
+  <ul>
+<% current_user.stuffs.each do |stuff|%>
+    <li><%= stuff.name %></li>
+<%end  %>
+  </ul>
 </div>
