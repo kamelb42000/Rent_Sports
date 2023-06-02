@@ -28,16 +28,27 @@
   background: #106e77;
 }
 .btn-show1{
-  display: inline-block;
   position: absolute;
   bottom: 10%;
   right: 20%;
+  text-decoration: none;
+  padding: 10px 20px;
   background: #0929db;
-  color: black;
-  border-radius: 30px;
+  color: white;
+  border-radius: 8px;
   margin-top: 25px;
   transition: background 0.3s;
-  padding: 12px 30px;
+}
+.btn-show1 a{
+  color: white;
+}
+
+.btn-show2 a{
+  color: white;
+}
+
+.btn-show3 a{
+  color: white;
 }
 
 .btn-show2{
@@ -47,11 +58,12 @@
   right: 50%;
   background: #0929db;
   color: black;
-  border-radius: 30px;
+  border-radius: 8px;
   margin-top: 25px;
   transition: background 0.3s;
   padding: 12px 30px;
 }
+
 
 .btn-show3{
   display: inline-block;
@@ -60,7 +72,7 @@
   right: 80%;
   background-color: #0929db;
   color: black;
-  border-radius: 30px;
+  border-radius: 8px;
   margin-top: 25px;
   transition: background 0.3s;
   padding: 12px 30px;
@@ -93,4 +105,26 @@
 .btn-edit:hover {
   background-color: #ccc;
   color: #333;
+}
+
+.btn_index{
+    text-decoration: none;
+    padding: 10px 20px;
+    background: #0929db;
+    color: white;
+    border-radius: 30px;
+    margin-top: 30px;
+    transition: background 0.3s;
+  }
+
+.btn_index:hover{
+    background: #106e77;
+
+}
+
+.future-produits h2{
+  font-size: 2rem;
+  position: relative;
+  left: 5%;
+  z-index: -1;
 }
