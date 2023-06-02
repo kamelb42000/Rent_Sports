@@ -10,5 +10,6 @@ export default class extends Controller {
 
   toggleMenu() {
     this.menuTarget.classList.toggle("showmenu");
+    this.element.classList.toggle("disable_scroll");
   }
 }
