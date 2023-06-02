@@ -1,6 +1,9 @@
 // Import page-specific CSS files here.
 @import "home";
 
+body{
+  overflow-x: hidden;
+}
 .bouton {
   display: inline-block;
   text-decoration: none;
@@ -49,6 +52,11 @@
   margin-left: 10px;
 }
 
+.mb{
+  position: relative;
+  left: 5%;
+  z-index: 1;
+}
 // configuration pour le bookings.index
 body{
   font-family: Arial, sans-serif;
@@ -163,4 +171,8 @@ body{
   .menu li a{
       font-size: 16px;
   }
+}
+
+.mapboxgl-ctrl-bottom-right{
+  display: none;
 }
