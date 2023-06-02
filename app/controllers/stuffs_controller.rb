@@ -11,6 +11,7 @@ class StuffsController < ApplicationController
         marker_html: render_to_string(partial: "marker", locals: {stuff: stuff})
       }
     end
+
   end
 
   def show
@@ -26,7 +27,7 @@ class StuffsController < ApplicationController
   def update
     @stuff = Stuff.find(params[:id])
     if @stuff.update(stuff_params)
-    redirect_to stuffs_path(@stuffs), notice: "L'équipement a été modifié avec succès"
+    redirect_to stuffs_path(@stuffs), flash: {alert: "L'équipement a été modifié avec succès"}
     else
       render :edit
     end
@@ -55,7 +56,9 @@ class StuffsController < ApplicationController
   private
 
   def stuff_params
-    params.require(:stuff).permit(:name, :price, :category_id, :adress)
+
+    params.require(:stuff).permit(:name, :price, :category_id, :adress,:current_user )
+
   end
 
 end
