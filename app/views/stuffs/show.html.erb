@@ -62,3 +62,7 @@
 <div class="btn-show3">
 <%= link_to "Back", stuffs_path %>
 </div>
+
+<% @stuff.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>

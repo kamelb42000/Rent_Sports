@@ -57,7 +57,7 @@ class StuffsController < ApplicationController
 
   def stuff_params
 
-    params.require(:stuff).permit(:name, :price, :category_id, :adress,:current_user )
+    params.require(:stuff).permit(:name, :price, :category_id, :adress,:current_user, photos: [])
 
   end
 
