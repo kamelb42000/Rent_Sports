@@ -16,10 +16,13 @@
     <div class="titre">
       <a><strong><%= link_to "Rent-Sports", root_path %></strong></a>
       </div>
+      
 
-<h1>Equipments#new</h1>
-<p>Find me in app/views/equipments/new.html.erb</p>
-
+<div class="card">
+  <div class="card-header">
+    <div class="text-header">Mettez en location votre équipement</div>
+  </div>
+  <div class="card-body">
 
 <%= simple_form_for(@stuff, url: stuffs_path, method: :post) do |f| %>
   <%= f.input :name %>
@@ -28,9 +31,14 @@
 
     <div>
     <%= f.label :description %>
+    <div class="textarea">
     <%= f.text_area :description %>
     </div>
-  <%= f.submit %>
+    </div>
+     <input type="submit" class="btn-new" value="Louez votre équipement">
 <% end %>
+      </div>
+  </div>
+</div>
 
 </body>

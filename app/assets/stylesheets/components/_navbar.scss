@@ -59,8 +59,14 @@
 }
 
 .showmenu {
-  left: 0%;
-  top:0%
+  left: 0;
+  top:0;
+}
+
+.disable_scroll {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .menu li:last-child {

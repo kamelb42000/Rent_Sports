@@ -14,3 +14,83 @@
 .col a:hover{
   background: #106e77;
 }
+
+.btn_home{
+  text-decoration: none;
+  padding: 10px 20px;
+  background: #0929db;
+  color: white;
+  border-radius: 30px;
+  margin-top: 25px;
+  transition: background 0.3s;
+}
+.btn_home:hover{
+  background: #106e77;
+}
+.btn-show1{
+  display: inline-block;
+  position: absolute;
+  bottom: 10%;
+  right: 20%;
+  background: #0929db;
+  color: black;
+  border-radius: 30px;
+  margin-top: 25px;
+  transition: background 0.3s;
+  padding: 12px 30px;
+}
+
+.btn-show2{
+  display: inline-block;
+  position: absolute;
+  bottom: 10%;
+  right: 50%;
+  background: #0929db;
+  color: black;
+  border-radius: 30px;
+  margin-top: 25px;
+  transition: background 0.3s;
+  padding: 12px 30px;
+}
+
+.btn-show3{
+  display: inline-block;
+  position: absolute;
+  bottom: 10%;
+  right: 80%;
+  background-color: #0929db;
+  color: black;
+  border-radius: 30px;
+  margin-top: 25px;
+  transition: background 0.3s;
+  padding: 12px 30px;
+}
+
+.btn-show1
+.btn-show2
+.btn-show3:hover{
+  background-color: #106e77;
+}
+
+.btn-edit {
+  padding: 12px 24px;
+  gap: 100px;
+  margin-left: 100px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  right: 30%;
+  bottom: 5%;
+}
+
+.btn-edit:hover {
+  background-color: #ccc;
+  color: #333;
+}
