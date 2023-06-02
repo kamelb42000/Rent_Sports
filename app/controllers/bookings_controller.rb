@@ -51,6 +51,17 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.accepted = false
+
+    if @booking.save
+      redirect_to bookings_path, notice: "La réservation a été validée avec succès"
+    else
+      redirect_to bookings_path
+    end
+  end
+
 private
 
   def booking_params
