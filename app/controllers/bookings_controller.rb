@@ -19,7 +19,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
     @booking.stuff_id = @stuff.id
-    @booking.accepted = true
 
     if !@stuff.bookings.where(date: @booking.date).empty?
       return redirect_to stuff_path(@stuff), flash: {alert: "Cet équipement est déjà réservé à cette date."}
@@ -53,7 +52,7 @@ class BookingsController < ApplicationController
 
   def accept
     @booking = Booking.find(params[:id])
-    @booking.accepted = false
+    @booking.accepted = true
 
     if @booking.save
       redirect_to bookings_path, notice: "La réservation a été validée avec succès"
