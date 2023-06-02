@@ -11,7 +11,6 @@ class StuffsController < ApplicationController
         marker_html: render_to_string(partial: "marker", locals: {stuff: stuff})
       }
     end
-
   end
 
   def show
@@ -57,7 +56,9 @@ class StuffsController < ApplicationController
 
   def stuff_params
 
-    params.require(:stuff).permit(:name, :price, :category_id, :adress,:current_user, photos: [])
+
+    params.require(:stuff).permit(:name, :price, :category_id, :adress,:current_user, photos: [], :description)
+
 
   end
 
