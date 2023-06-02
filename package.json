@@ -10,6 +10,9 @@
     "cloud": "^2.0.2",
     "cloudinary": "^1.37.0",
     "genery": "^0.1.9",
+
+    "cloudinary": "^1.37.0",
+
     "typed.js": "^2.0.16",
     "webpack": "^5.84.1",
     "webpack-cli": "^5.1.1"

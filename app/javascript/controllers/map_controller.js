@@ -17,12 +17,12 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v12",
       zoom: 1.5,
-
     })
+    this.map.dragPan.disable()
 
-    this.map.dragRotate.disable();
+
     this.map.touchZoomRotate.disableRotation();
-    this.map.scrollZoom.disable();
+
     this.map.addControl(
       new mapboxgl.NavigationControl());
       new mapboxgl.GeolocateControl({
@@ -34,7 +34,7 @@ export default class extends Controller {
       // Draw an arrow next to the location dot to indicate which direction the device is heading.
       showUserHeading: true
       })
-      
+
     this.map.on('load', async () => {
 
       const geojson = await getLocation();

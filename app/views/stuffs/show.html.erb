@@ -1,12 +1,10 @@
-<h1><%=  @stuff.name%></h1>
-<p>Catégorie: <%= @category_name %></p>
-<p> Année : <%=  @stuff.year%></p>
-<p><%=  @stuff.price%></p>
-<p><%=  @stuff.description%></p>
-<p><%=  @stuff.address%></p>
 
 <%# ------- Réservations ----- %>
-<h2>Réservations</h2>
+<div class="card">
+  <div class="card-header">
+    <div class="text-header">Réservations</div>
+  </div>
+  <div class="card-body">
 <%= simple_form_for @booking, url: stuff_bookings_path(@stuff.id), method: :post do |f| %>
   <% if @booking.errors.any? %>
     <div id="error_explanation">
@@ -19,13 +17,24 @@
     </div>
   <% end %>
   <%= f.input :date, as: :date %>
-
+<h1><%=  @stuff.name%></h1>
+<p>Catégorie: <%= @category_name %></p>
+<p> Année : <%=  @stuff.year%></p>
+<p>Prix: <%=  @stuff.price%></p>
+<p>Description: <%=  @stuff.description%></p>
+<p>Adresse: <%=  @stuff.address%></p>
   <div class="actions">
-  <%= f.button :submit, 'Reserve' %>
-  </div>
+     <input type="submit" class="btn-new" value="Réservé">
+    </div>
 <% end %>
-
+      </div>
+  </div>
+</div>
 <%# ------- Réservations ----- %>
+
+
+
+
 
 <%# ------ Alerte message -------- %>
 <% if flash[:alert] %>
@@ -40,14 +49,16 @@
   </div>
 <% end %>
 <%# ------ Alerte message -------- %>
-<div>
+<div class="btn-show1">
 <%= link_to "Delete",
       stuff_path(@stuff),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 </div>
 
-<div>
+<div class="btn-show2">
   <%= link_to "Edit", edit_stuff_path(@stuff)%>
 </div>
 
-<p><%= link_to "Back", stuffs_path %></p>
+<div class="btn-show3">
+<%= link_to "Back", stuffs_path %>
+</div>
